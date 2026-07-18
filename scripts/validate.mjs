@@ -15,7 +15,7 @@ for (const marker of ['style.css?v=1.0.0', 'readability.css?v=1.0.0', 'visualize
 }
 
 const app = execFileSync('unzip', ['-p', pkg, 'static/app.js'], { encoding: 'utf8' });
-for (const marker of ['Math.min(50,queueSongs.length)', 'Math.min(30,queueSongs.length)', 'toggleFavorite', 'setPlayMode', '--visualizer-rgb']) {
+for (const marker of ['Math.min(50,queueSongs.length)', 'trackIndexes(queueSongs.length,center)', 'toggleFavorite', 'setPlayMode', '--visualizer-rgb']) {
   if (!app.includes(marker)) throw Error(`missing release marker ${marker}`);
 }
 
