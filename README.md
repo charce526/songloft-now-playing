@@ -1,48 +1,48 @@
-# 正在播放 · Now Playing
+# 🎵 Songloft 正在播放
 
-[![Version](https://img.shields.io/badge/version-1.0.0-45a6a6)](https://github.com/charce526/songloft-now-playing)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+Songloft 正在播放是一款面向 [Songloft](https://github.com/songloft-org/songloft) 的沉浸式 3D 专辑卡片播放扩展。它用 3D 卡片的方式显示正在播放的歌曲与歌单，背景与底部律动颜色跟随当前封面的主题色，并自动适配 Songloft 的深色、浅色主题以及 PC、移动端视图。
 
-沉浸式3D专辑卡片播放扩展，用3D卡片的方式显示正在播放的歌曲和歌单。
+> 🤖 本插件由 AI 生成。欢迎通过 GitHub Issues 反馈使用中遇到的问题与改进建议。
 
-这是一个基于 Songloft JS Plugin SDK、Three.js 和 #285 Player API 构建的 Songloft 扩展。播放器始终是播放状态的唯一数据源，扩展不会维护独立的播放队列或播放状态。
+## 🔗 关于 Songloft
 
-## 功能
+[Songloft](https://github.com/songloft-org/songloft) 是本插件所依赖的音乐服务项目。本插件基于 Songloft 提供的插件能力开发，是独立维护的扩展项目，并非 Songloft 主程序的内置组件。
+
+- 上游项目：[songloft-org/songloft](https://github.com/songloft-org/songloft)
+- 最低兼容版本：Songloft v2.10.0，且需要包含 [#285 Player API](https://github.com/songloft-org/songloft/issues/285) 更新
+- 播放器始终是播放状态的唯一数据源，扩展不维护独立的播放队列或播放状态
+- 依赖 `getState`、`onStateChange`、`play`、`togglePlay`、`prev`、`next` 与 `setPlayMode`
+- 支持现代 Chromium WebView、桌面端鼠标与移动端触摸操作
+
+## ✨ 功能亮点
+
+### 3D 专辑卡片
 
 - 将播放队列呈现为带封面、厚度和翻转动画的 3D 专辑卡片。
+- 常规模式最多按需加载 30 张卡片，随机模式最多按需加载 50 张，避免长队列一次性创建全部 3D 资源。
+
+### 播放控制
+
 - 支持顺序播放、列表循环和随机播放三种空间布局。
 - 左右拖动卡片切歌；随机模式同样支持拖动切换上一首或下一首。
 - 点击当前卡片暂停或继续，暂停时卡片翻转并显示暂停符号。
 - 右上角提供上一首、播放模式、收藏和下一首实体控制组。
 - 收藏状态显示红心，并与 Songloft 内置收藏歌单同步。
+
+### 主题与适配
+
 - 背景和底部律动颜色跟随当前封面的主题色。
 - 自动适配 Songloft 深色、浅色主题以及 PC、移动端视图。
-- 常规模式最多按需加载 30 张卡片，随机模式最多按需加载 50 张，避免长队列一次性创建全部 3D 资源。
 
-## 安装
+## 📦 安装
 
-1. 下载 [songloft-now-playing-1.0.0.jsplugin.zip](dist/songloft-now-playing-1.0.0.jsplugin.zip)。
+1. 下载 [songloft-now-playing-1.0.0.jsplugin.zip](release/songloft-now-playing-1.0.0.jsplugin.zip)。
 2. 打开 Songloft 插件管理页面。
-3. 上传该 `.jsplugin.zip` 文件。
-4. 从插件入口打开“正在播放”。
+3. 上传安装包并启用“正在播放”。
 
 不要解压安装包，也不要上传源码 ZIP。
 
-## 使用
-
-- 拖动卡片：切换歌曲。
-- 点击中央卡片：暂停或继续播放。
-- 点击右上角 `‹` / `›`：上一首或下一首。
-- 点击右上角播放模式控件：依次切换顺序、列表循环和随机播放。
-- 点击右上角心形控件：收藏或取消收藏当前歌曲。
-
-## 兼容性
-
-- 需要包含 [Songloft #285](https://github.com/songloft-org/songloft/issues/285) Player API 更新的 Songloft 版本。
-- 依赖 `getState`、`onStateChange`、`play`、`togglePlay`、`prev`、`next` 和 `setPlayMode`。
-- 支持现代 Chromium WebView、桌面端鼠标和移动端触摸操作。
-
-## 本地构建
+## 🛠️ 本地构建
 
 项目不需要安装额外 npm 依赖，但构建环境需要 Node.js、`zip` 和 `unzip`。
 
@@ -51,33 +51,14 @@ npm run build
 npm run validate
 ```
 
-构建后会生成：
+构建后的版本化插件安装包位于 `dist/` 目录，发布时会复制到 `release/` 目录随仓库发布。
 
-- `dist/songloft-now-playing-1.0.0.jsplugin.zip`：带版本号的正式安装包。
-- `dist/songloft-now-playing.jsplugin.zip`：便于本地更新测试的无版本别名，不提交到仓库。
+开发调试：
 
-## 项目结构
-
-```text
-plugin.json             插件清单
-src/main.js             Songloft 插件入口
-static/app.js           Player 桥接、Three.js 场景与交互
-static/index.html       插件页面
-static/*.css            主题、可读性和底部律动样式
-static/icon.svg         插件图标
-static/vendor/          Three.js 本地依赖
-scripts/build.mjs       构建脚本
-scripts/validate.mjs    发布包验证脚本
+```bash
+npm run build
 ```
 
-## 1.0.0
+## 📄 许可证
 
-- 正式统一项目标识为 `songloft-now-playing`。
-- 正式中文名为“正在播放”，英文名为“Now Playing”。
-- 完成深色/浅色、PC/移动端和长播放队列适配。
-- 完成三种播放模式、卡片暂停翻转、收藏和主题色律动。
-- 构建产物正式命名为 `songloft-now-playing-1.0.0.jsplugin.zip`。
-
-## License
-
-[MIT](LICENSE) © 2026 charce526
+本项目采用 [MIT](LICENSE) 开源许可证。Songloft 本身的授权与使用条款请以上游项目为准。

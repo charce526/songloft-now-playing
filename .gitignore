@@ -1,5 +1,4 @@
-dist/_build/
-dist/songloft-now-playing.jsplugin.zip
+dist/
 node_modules/
 .DS_Store
 *.log
