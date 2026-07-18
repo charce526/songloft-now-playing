@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/badge/version-1.0.0-45a6a6)](https://github.com/charce526/songloft-now-playing)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-沉浸式3D专辑卡片播放扩展，用来3D卡片的方式显示正在播放的歌曲和歌单。
+沉浸式3D专辑卡片播放扩展，用3D卡片的方式显示正在播放的歌曲和歌单。
 
 这是一个基于 Songloft JS Plugin SDK、Three.js 和 #285 Player API 构建的 Songloft 扩展。播放器始终是播放状态的唯一数据源，扩展不会维护独立的播放队列或播放状态。
 

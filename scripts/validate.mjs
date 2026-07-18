@@ -22,7 +22,7 @@ for (const marker of ['Math.min(50,queueSongs.length)', 'Math.min(30,queueSongs.
 const manifest = JSON.parse(execFileSync('unzip', ['-p', pkg, 'plugin.json'], { encoding: 'utf8' }));
 if (manifest.version !== '1.0.0') throw Error('invalid release version');
 if (manifest.entryPath !== 'songloft-now-playing') throw Error('invalid entryPath');
-if (manifest.description !== '沉浸式3D专辑卡片播放扩展，用来3D卡片的方式显示正在播放的歌曲和歌单。') throw Error('invalid description');
+if (manifest.description !== '沉浸式3D专辑卡片播放扩展，用3D卡片的方式显示正在播放的歌曲和歌单。') throw Error('invalid description');
 if (!manifest.entryHash || !manifest.zipHash) throw Error('missing release hashes');
 
 const main = execFileSync('unzip', ['-p', pkg, 'main.js'], { encoding: 'utf8' });
