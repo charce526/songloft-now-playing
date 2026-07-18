@@ -1,0 +1,28 @@
+#visualizer {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: min(22vh, 180px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(2px, 0.45vw, 7px);
+  padding: 0 2vw;
+  overflow: hidden;
+  pointer-events: none;
+  perspective: 500px;
+}
+
+#visualizer span {
+  width: clamp(3px, 0.55vw, 9px);
+  height: 42%;
+  flex: 0 1 9px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(to top, rgba(var(--visualizer-rgb, 69, 166, 166), 0.72), rgba(var(--visualizer-rgb, 69, 166, 166), 0.08));
+  box-shadow: 0 0 12px rgba(var(--visualizer-rgb, 69, 166, 166), 0.18);
+  transform: scaleY(0.08) rotateX(-8deg);
+  transform-origin: 50% 100%;
+  will-change: transform, opacity;
+}
