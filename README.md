@@ -9,7 +9,7 @@ Songloft 正在播放是一款面向 [Songloft](https://github.com/songloft-org/
 [Songloft](https://github.com/songloft-org/songloft) 是本插件所依赖的音乐服务项目。本插件基于 Songloft 提供的插件能力开发，是独立维护的扩展项目，并非 Songloft 主程序的内置组件。
 
 - 上游项目：[songloft-org/songloft](https://github.com/songloft-org/songloft)
-- 最低兼容版本：Songloft v2.10.0，且需要包含 [#285 Player API](https://github.com/songloft-org/songloft/issues/285) 更新
+- 最低兼容版本：Songloft v2.10.0，且需要包含 Player API 更新
 - 播放器始终是播放状态的唯一数据源，扩展不维护独立的播放队列或播放状态
 - 依赖 `getState`、`onStateChange`、`play`、`togglePlay`、`prev`、`next` 与 `setPlayMode`
 - 支持现代 Chromium WebView、桌面端鼠标与移动端触摸操作
