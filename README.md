@@ -26,7 +26,7 @@ Songloft 正在播放是一款面向 [Songloft](https://github.com/songloft-org/
 - 支持顺序播放、列表循环和随机播放三种空间布局。
 - 左右拖动卡片切歌；随机模式同样支持拖动切换上一首或下一首。
 - 点击当前卡片暂停或继续，暂停时卡片翻转并显示暂停符号。
-- 右上角提供上一首、播放模式、收藏和下一首实体控制组。
+- 右上角提供上一首、下一首、播放模式、音量和收藏实体控制组。
 - 收藏状态显示红心，并与 Songloft 内置收藏歌单同步。
 
 ### 主题与适配
@@ -36,7 +36,7 @@ Songloft 正在播放是一款面向 [Songloft](https://github.com/songloft-org/
 
 ## 📦 安装
 
-1. 下载 [songloft-now-playing-1.0.0.jsplugin.zip](release/songloft-now-playing-1.0.0.jsplugin.zip)。
+1. 下载 [songloft-now-playing-1.0.6.jsplugin.zip](release/songloft-now-playing-1.0.6.jsplugin.zip)。
 2. 打开 Songloft 插件管理页面。
 3. 上传安装包并启用“正在播放”。
 
@@ -58,6 +58,14 @@ npm run validate
 ```bash
 npm run build
 ```
+
+## 📝 更新日志
+
+### 1.0.6
+
+- 优化随机播放布局：保留中央播放卡片的安全显示区域，随机卡片更紧凑地分布在周围，减少遮挡和远距离漂移。
+- 统一右上角播放控制组的视觉风格，将音量控制改为同风格图形图标。
+- 收口发布前校验，确保 1.0.6 的源码、安装包、缓存版本和插件元信息保持一致。
 
 ## 📄 许可证
 
