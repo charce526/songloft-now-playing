@@ -34,6 +34,23 @@ Songloft 正在播放是一款面向 [Songloft](https://github.com/songloft-org/
 - 背景和底部律动颜色跟随当前封面的主题色。
 - 自动适配 Songloft 深色、浅色主题以及 PC、移动端视图。
 
+## 🖼️ 界面预览
+
+<table>
+  <tr>
+    <td align="center"><strong>PC端随机播放模式</strong></td>
+    <td align="center"><strong>PC端列表播放模式</strong></td>
+    <td align="center"><strong>移动端列表播放模式</strong></td>
+    <td align="center"><strong>移动端随机播放模式</strong></td>
+  </tr>
+  <tr>
+    <td><a href="screenshots/001.jpg" target="_blank"><img src="screenshots/001.jpg" alt="PC界面预览 001"></a></td>
+    <td><a href="screenshots/002.jpg" target="_blank"><img src="screenshots/002.jpg" alt="PC界面预览 002"></a></td>
+    <td><a href="screenshots/003.jpg" target="_blank"><img src="screenshots/003.jpg" alt="移动端界面预览 003"></a></td>
+    <td><a href="screenshots/004.jpg" target="_blank"><img src="screenshots/004.jpg" alt="移动端界面预览 004"></a></td>
+  </tr>
+</table>
+
 ## 📦 安装
 
 1. 下载 [songloft-now-playing-1.0.18.jsplugin.zip](release/songloft-now-playing-1.0.18.jsplugin.zip)。
