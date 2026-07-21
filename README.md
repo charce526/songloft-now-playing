@@ -53,7 +53,7 @@ Songloft 正在播放是一款面向 [Songloft](https://github.com/songloft-org/
 
 ## 📦 安装
 
-1. 下载 [songloft-now-playing-1.0.18.jsplugin.zip](release/songloft-now-playing-1.0.18.jsplugin.zip)。
+1. 下载 [songloft-now-playing-1.0.29.jsplugin.zip](release/songloft-now-playing-1.0.29.jsplugin.zip)。
 2. 打开 Songloft 插件管理页面。
 3. 上传安装包并启用“正在播放”。
 
@@ -69,14 +69,14 @@ https://raw.githubusercontent.com/charce526/songloft-now-playing/main/registry.j
 
 ## 🛠️ 本地构建
 
-项目不需要安装额外 npm 依赖，但构建环境需要 Node.js、`zip` 和 `unzip`。
+项目不需要安装额外 npm 依赖。构建需要 Node.js；非 Windows 环境还需要 `zip` 与 `unzip`，Windows 下自动改用 PowerShell 完成压缩。
 
 ```bash
 npm run build
 npm run validate
 ```
 
-构建后的版本化插件安装包位于 `dist/` 目录，发布时会复制到 `release/` 目录随仓库发布。
+构建后的版本化插件安装包位于 `dist/` 目录，历史版本会持续保留，不会在重新构建时被清理；发布时将当前版本复制到 `release/` 目录随仓库发布。
 
 开发调试：
 
@@ -106,6 +106,22 @@ npm run build
 - 修复播放模式切换、随机卡片旋转和暂停翻转状态的多处稳定性问题。
 - 增加运行时回归测试，覆盖随机模式、大队列、点击命中和暂停翻转流程。
 
+### 1.0.29
+
+**新增功能**
+- 新增歌词显示：在底部律动区域上方展示当前播放句，支持 LRC 时间轴解析，并基于本地时钟插值与宿主播放状态自动校准，保持歌词与播放进度同步。
+- 新增歌词显示开关（右上角"歌词"按钮），开关状态在本地持久化。
+- 新增收藏动效：点击收藏后卡片四周飘出爱心粒子，右上角红心标记逻辑保持不变。
+**体验优化**
+- 移动端列表模式可见卡片由 5 张扩展至 7 张；控制按钮在 700px 与 380px 断点下分级放大，便于触控操作。
+- 歌词字号与宽度按视口自适应调整，长句歌词尽量减少省略号截断；增加多方向描边阴影，提升歌词与封面颜色相近时的可读性。
+- 刷新卡片按钮仅在随机播放模式下显示。
+**问题修复**
+- 修复快速连续点击播放或暂停时偶发的 "songloft host call timeout: player.togglePlay" 报错：合并重复的切换请求，并对超时自动重试。
+- 错误提示由全屏遮罩改为左下角非阻塞提示，数秒后自动消失，不再阻断后续操作。
+- 修复页面刷新后歌词从歌曲开头重新显示、与实际播放进度不同步的问题。
+- 修复浅色主题下移动端控制按钮出现黑色阴影的问题。
+
 ## 📄 许可证
 
-本项目采用 [MIT](LICENSE) 开源许可证。Songloft 本身的授权与使用条款请以上游项目为准。
+本项目采用 [Apache License 2.0](LICENSE) 开源许可证。Songloft 本身的授权与使用条款请以上游项目为准。
