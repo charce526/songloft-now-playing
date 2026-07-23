@@ -1,18 +1,18 @@
 {
   "name": "正在播放",
   "name_en": "Now Playing",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "沉浸式3D专辑卡片播放扩展，用3D卡片的方式显示正在播放的歌曲和歌单。",
   "author": "charce526",
   "license": "Apache-2.0",
   "entryPath": "songloft-now-playing",
   "main": "main.js",
   "icon": "icon.svg",
-  "minHostVersion": "2.10.0",
+  "minHostVersion": "2.11.0",
   "permissions": [],
   "staticHash": false,
   "updateUrl": "https://raw.githubusercontent.com/charce526/songloft-now-playing/main/plugin.json",
-  "download_url": "https://raw.githubusercontent.com/charce526/songloft-now-playing/main/release/songloft-now-playing-1.0.29.jsplugin.zip",
-  "entryHash": "55e5ce581bc2a8eac885f15819b79a5643575e1e9f514a1b7903a3523f449ebc",
-  "zipHash": "d16f50274efb9a8c192485341bdb185401ca0418575a5c195dc9ade48a37707c"
+  "download_url": "https://raw.githubusercontent.com/charce526/songloft-now-playing/main/release/songloft-now-playing-1.0.30.jsplugin.zip",
+  "entryHash": "b0312c04c2ea181088e3547eaa2dbc1563e8ecf1f346204ca5b132cf5590db77",
+  "zipHash": "8d4bf195587a9489631d4c8eafcb2dc99984a292eab833906a64afa175663b99"
 }

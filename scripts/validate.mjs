@@ -10,8 +10,8 @@ for (const file of ['plugin.json', 'main.js', 'static/index.html', 'static/app.j
 }
 
 const html = execFileSync('unzip', ['-p', pkg, 'static/index.html'], { encoding: 'utf8' });
-for (const marker of ['style.css?v=1.0.29', 'readability.css?v=1.0.29', 'visualizer.css?v=1.0.29', 'three.min.js?v=1.0.29', 'app.js?v=1.0.29']) {
-  if (!html.includes(marker)) throw Error(`missing 1.0.29 cache key ${marker}`);
+for (const marker of ['style.css?v=1.0.30', 'readability.css?v=1.0.30', 'visualizer.css?v=1.0.30', 'three.min.js?v=1.0.30', 'app.js?v=1.0.30']) {
+  if (!html.includes(marker)) throw Error(`missing 1.0.30 cache key ${marker}`);
 }
 
 const app = execFileSync('unzip', ['-p', pkg, 'static/app.js'], { encoding: 'utf8' });
@@ -23,12 +23,12 @@ if (app.includes('centralTap')) throw Error('oversized center click fallback mus
 if (html.includes('🔊') || !html.includes('speaker-icon')) throw Error('volume icon is not release-ready');
 
 const manifest = JSON.parse(execFileSync('unzip', ['-p', pkg, 'plugin.json'], { encoding: 'utf8' }));
-if (manifest.version !== '1.0.29') throw Error('invalid release version');
+if (manifest.version !== '1.0.30') throw Error('invalid release version');
 if (manifest.entryPath !== 'songloft-now-playing') throw Error('invalid entryPath');
 if (manifest.description !== '沉浸式3D专辑卡片播放扩展，用3D卡片的方式显示正在播放的歌曲和歌单。') throw Error('invalid description');
 if (!manifest.entryHash || !manifest.zipHash) throw Error('missing release hashes');
 
 const main = execFileSync('unzip', ['-p', pkg, 'main.js'], { encoding: 'utf8' });
-if (!main.includes('songloft-now-playing 1.0.29 initialized')) throw Error('stale main entry identity');
+if (!main.includes('songloft-now-playing 1.0.30 initialized')) throw Error('stale main entry identity');
 
-console.log('songloft-now-playing 1.0.29 package identity, description, cache keys, hashes, structure, and runtime markers are valid.');
+console.log('songloft-now-playing 1.0.30 package identity, description, cache keys, hashes, structure, and runtime markers are valid.');

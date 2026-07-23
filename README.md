@@ -9,7 +9,7 @@ Songloft 正在播放是一款面向 [Songloft](https://github.com/songloft-org/
 [Songloft](https://github.com/songloft-org/songloft) 是本插件所依赖的音乐服务项目。本插件基于 Songloft 提供的插件能力开发，是独立维护的扩展项目，并非 Songloft 主程序的内置组件。
 
 - 上游项目：[songloft-org/songloft](https://github.com/songloft-org/songloft)
-- 最低兼容版本：Songloft v2.10.0，且需要包含 Player API 更新
+- 最低兼容版本：Songloft v2.11.0，且需要包含 Player API 更新
 - 播放器始终是播放状态的唯一数据源，扩展不维护独立的播放队列或播放状态
 - 依赖 `getState`、`onStateChange`、`play`、`togglePlay`、`prev`、`next` 与 `setPlayMode`
 - 支持现代 Chromium WebView、桌面端鼠标与移动端触摸操作
@@ -53,7 +53,7 @@ Songloft 正在播放是一款面向 [Songloft](https://github.com/songloft-org/
 
 ## 📦 安装
 
-1. 下载 [songloft-now-playing-1.0.29.jsplugin.zip](release/songloft-now-playing-1.0.29.jsplugin.zip)。
+1. 下载 [songloft-now-playing-1.0.30.jsplugin.zip](release/songloft-now-playing-1.0.30.jsplugin.zip)。
 2. 打开 Songloft 插件管理页面。
 3. 上传安装包并启用“正在播放”。
 
@@ -123,6 +123,10 @@ npm run build
 - 错误提示由全屏遮罩改为左下角非阻塞提示，数秒后自动消失，不再阻断后续操作。
 - 修复页面刷新后歌词从歌曲开头重新显示、与实际播放进度不同步的问题。
 - 修复浅色主题下移动端控制按钮出现黑色阴影的问题。
+
+### 1.0.30
+
+- 将最低支持的 Songloft 宿主版本提升至 v2.11.0，与官方 2.11.0 提供的播放器接口能力对齐；低于该版本的宿主在安装或更新时将被拦截。
 
 ## 📄 许可证
 
