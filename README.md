@@ -53,7 +53,7 @@ Songloft 正在播放是一款面向 [Songloft](https://github.com/songloft-org/
 
 ## 📦 安装
 
-1. 下载 [songloft-now-playing-1.0.30.jsplugin.zip](release/songloft-now-playing-1.0.30.jsplugin.zip)。
+1. 下载 [songloft-now-playing-1.0.31.jsplugin.zip](release/songloft-now-playing-1.0.31.jsplugin.zip)。
 2. 打开 Songloft 插件管理页面。
 3. 上传安装包并启用“正在播放”。
 
@@ -127,6 +127,11 @@ npm run build
 ### 1.0.30
 
 - 将最低支持的 Songloft 宿主版本提升至 v2.11.0，与官方 2.11.0 提供的播放器接口能力对齐；低于该版本的宿主在安装或更新时将被拦截。
+
+### 1.0.31
+
+- 优化移动端顺序、循环播放模式的卡片拖拽手感：拖动时卡片实时跟随手指，滑动快慢与卡片移动速度保持一致，松手后平滑吸附至最近卡片。
+- 拖拽灵敏度改为按屏幕实际卡片间距自适应计算，消除卡片移动慢于手指造成的滞后感；桌面端拖拽手感保持不变。
 
 ## 📄 许可证
 
